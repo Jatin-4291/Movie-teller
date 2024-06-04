@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
 import "./index.css";
-import App from "./App";
-import Stars from "./hoverStars";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import StarRating from "./StarRating";
 
 function Test() {
   const [movieRating, setMovieRating] = useState(0);
+
   return (
     <div>
-      <Stars color="red" maxRating={10} onSetRating={setMovieRating} />
-      <p>this movie is {movieRating} rated </p>
+      <StarRating color="blue" maxRating={10} onSetRating={setMovieRating} />
+      <p>This movie was rated {movieRating} stars</p>
     </div>
   );
 }
-root.render(
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
